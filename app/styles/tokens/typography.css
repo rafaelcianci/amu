@@ -1,0 +1,42 @@
+:root{
+--font-display:"Comfortaa","Trebuchet MS",system-ui,sans-serif;
+--font-text:"Manrope","Helvetica Neue",Arial,sans-serif;
+--font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+
+--fw-light:300;
+--fw-regular:400;
+--fw-medium:500;
+--fw-semibold:600;
+--fw-bold:700;
+
+--fs-display-xl:clamp(3rem,6vw,5rem);
+--fs-display-lg:clamp(2.5rem,4.5vw,3.75rem);
+--fs-display-md:2.5rem;
+--fs-h1:2rem;
+--fs-h2:1.5rem;
+--fs-h3:1.25rem;
+--fs-body-lg:1.125rem;
+--fs-body:1rem;
+--fs-body-sm:.875rem;
+--fs-caption:.8125rem;
+--fs-overline:.6875rem;
+
+--lh-tight:1.08;
+--lh-snug:1.25;
+--lh-normal:1.5;
+--lh-relaxed:1.65;
+
+--ls-display:-.02em;
+--ls-normal:0;
+--ls-overline:.18em;
+--ls-wide:.04em;
+
+--type-hero-family:var(--font-display);
+--type-hero-weight:var(--fw-light);
+--type-heading-family:var(--font-display);
+--type-heading-weight:var(--fw-medium);
+--type-body-family:var(--font-text);
+--type-body-weight:var(--fw-regular);
+--type-overline-family:var(--font-text);
+--type-overline-weight:var(--fw-semibold);
+}

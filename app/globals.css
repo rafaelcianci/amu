@@ -1,0 +1,206 @@
+@import "./styles/tokens/fonts.css";
+@import "./styles/tokens/colors.css";
+@import "./styles/tokens/typography.css";
+@import "./styles/tokens/spacing.css";
+@import "./styles/tokens/elevation.css";
+@import "./styles/tokens/motion.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-text);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--text-link-hover);
+}
+
+h1, h2, h3, h4, p, figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* [data-reveal] initial state is set inline by ScrollFX to avoid a flash of
+   hidden content before hydration on slow connections; this is the static
+   fallback for no-JS / pre-hydration paint. */
+[data-reveal] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax], [data-parallax-bg] {
+    transform: none !important;
+  }
+}
+
+/* ---------- Header responsive chrome ---------- */
+/* display is set here (not inline) so the media query below can win —
+   an inline `style.display` would always beat a stylesheet media query. */
+.amu-nav-desktop {
+  display: flex;
+}
+.amu-cta-desktop {
+  display: block;
+}
+.amu-nav-trigger {
+  display: none;
+}
+@media (max-width: 899px) {
+  .amu-nav-desktop,
+  .amu-cta-desktop {
+    display: none;
+  }
+  .amu-nav-trigger {
+    display: inline-flex;
+  }
+}
+@media (min-width: 900px) {
+  .amu-nav-sheet {
+    display: none;
+  }
+}
+
+/* ---------- Shared responsive layout primitives ---------- */
+.amu-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .amu-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.amu-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+@media (max-width: 900px) {
+  .amu-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .amu-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.amu-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+@media (max-width: 760px) {
+  .amu-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.amu-panel-split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .amu-panel-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.amu-content-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .amu-content-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.amu-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+@media (max-width: 720px) {
+  .amu-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.amu-testimonial {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .amu-testimonial {
+    grid-template-columns: 1fr;
+  }
+}
+
+.amu-footer-full-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: var(--space-8);
+}
+@media (max-width: 760px) {
+  .amu-footer-full-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.amu-footer-compact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.amu-section-rail {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.amu-section-y {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
