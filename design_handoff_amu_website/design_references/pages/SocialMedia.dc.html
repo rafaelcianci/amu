@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Página de serviço" description="Detalhe de solução (social media): hero em parallax, o que está incluso, pacotes, entregáveis, FAQ e CTA." -->
+<helmet><script src="./ds-base.js"></script><script src="../../parallax.js"></script><script src="../../image-slot.js"></script><style>body{margin:0;background:#F8F7FF}a{color:var(--text-link);text-decoration:none}a:hover{color:var(--text-link-hover)}</style></helmet>
+<div style="font-family:var(--font-text);color:var(--text-body);background:var(--surface-page);overflow-x:hidden">
+
+<header style="position:sticky;top:0;z-index:30;background:rgba(248,247,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-subtle)">
+<div style="max-width:1200px;margin:0 auto;padding:0 48px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:32px">
+<a href="../landing-page/LandingPage.dc.html"><img src="../../assets/logo.svg" alt="AMUdesign" style="height:30px;display:block"></a>
+<nav style="display:flex;gap:28px;align-items:center;font-size:.875rem;font-weight:500;color:var(--neutral-600)"><a href="../landing-page/LandingPage.dc.html" style="color:inherit">Manifesto</a><a href="../social-media/SocialMedia.dc.html" style="color:var(--purple-700);font-weight:600">Soluções</a><a href="../metodo/Metodo.dc.html" style="color:inherit">Método</a><a href="../sobre/Sobre.dc.html" style="color:inherit">Sobre</a><a href="../blog/Blog.dc.html" style="color:inherit">Blog</a></nav>
+<x-import component-from-global-scope="AMUDesignSystem_1cce44.Button" size="sm" iconRight="arrow-right" hint-size="180px,34px">Diagnóstico gratuito</x-import>
+</div>
+</header>
+
+<section style="position:relative;padding:96px 0;overflow:hidden">
+<div data-parallax="0.35" style="position:absolute;top:-160px;left:-160px;width:520px;height:520px;border-radius:50%;background:var(--purple-100);opacity:.75"></div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center">
+<div>
+<div data-reveal style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">Soluções · 01 de 06</div>
+<h1 data-reveal="80" style="font-family:var(--font-display);font-weight:300;font-size:3.25rem;line-height:1.1;letter-spacing:-.02em;color:var(--purple-700);margin:20px 0 0">Social media com estratégia, não volume.</h1>
+<p data-reveal="160" style="font-size:1.125rem;line-height:1.65;color:var(--text-muted);max-width:500px;margin:24px 0 0">Seu Instagram como a melhor vitrine da marca. Gestão de Instagram, LinkedIn e Google Meu Negócio em pacotes de 8 a 16 posts por mês, com calendário editorial ligado ao funil de vendas.</p>
+<div data-reveal="240" style="display:flex;gap:12px;margin-top:32px;align-items:center">
+<x-import component-from-global-scope="AMUDesignSystem_1cce44.Button" size="lg" iconRight="arrow-right" hint-size="200px,54px">Pedir proposta</x-import>
+<span style="font-size:.8125rem;color:var(--text-muted)">a partir de R$ 2.200/mês</span>
+</div>
+</div>
+<div data-parallax="0.1" style="position:relative;aspect-ratio:4 / 5"><image-slot id="sm-hero" shape="rounded" radius="32" placeholder="Mockup de feed ou foto de produção (4:5)"></image-slot></div>
+</div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:0 48px 96px">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+<div data-reveal style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:20px;padding:32px;box-shadow:var(--shadow-xs)"><div style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">Alcance</div><div style="font-family:var(--font-display);font-weight:300;font-size:2rem;color:var(--purple-700);margin-top:8px">Rastreado</div><p style="font-size:.8125rem;line-height:1.6;color:var(--text-muted);margin:6px 0 0">Em tempo real, por post e por formato.</p></div>
+<div data-reveal="100" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:20px;padding:32px;box-shadow:var(--shadow-xs)"><div style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">Salvamentos</div><div style="font-family:var(--font-display);font-weight:300;font-size:2rem;color:var(--purple-700);margin-top:8px">No painel</div><p style="font-size:.8125rem;line-height:1.6;color:var(--text-muted);margin:6px 0 0">A métrica que mostra conteúdo útil de verdade.</p></div>
+<div data-reveal="200" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:20px;padding:32px;box-shadow:var(--shadow-xs)"><div style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">Cliques</div><div style="font-family:var(--font-display);font-weight:300;font-size:2rem;color:var(--purple-700);margin-top:8px">Com UTM</div><p style="font-size:.8125rem;line-height:1.6;color:var(--text-muted);margin:6px 0 0">Do perfil até a venda no CRM.</p></div>
+</div>
+</section>
+
+<section style="position:relative;height:420px;overflow:hidden">
+<div data-parallax="0.3" style="position:absolute;inset:-90px 0"><image-slot id="sm-band" shape="rect" placeholder="Imagem full-bleed — produção de conteúdo (paisagem)"></image-slot></div>
+<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,0,53,.78),rgba(28,0,53,.18))"></div>
+<div style="position:absolute;inset:auto 0 0;max-width:1200px;margin:0 auto;padding:48px">
+<p style="font-family:var(--font-display);font-weight:300;font-size:2rem;line-height:1.25;color:var(--purple-25);margin:0;max-width:700px">Mais que fazer post: construir presença que transforma audiência em cliente.</p>
+</div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:96px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start">
+<div>
+<div data-reveal style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">O que está incluso</div>
+<h2 data-reveal="60" style="font-family:var(--font-display);font-weight:500;font-size:2rem;color:var(--purple-700);margin:12px 0 24px">Tudo o que entra no mês</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div data-reveal style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><div style="font-size:.9375rem;font-weight:600;color:var(--purple-700)">Conteúdo autoral com briefing estratégico</div><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:6px 0 0">Cada peça nasce de um objetivo, com roteiro opcional para vídeo.</p></div>
+<div data-reveal="60" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><div style="font-size:.9375rem;font-weight:600;color:var(--purple-700)">Calendário editorial alinhado ao funil</div><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:6px 0 0">Topo, meio e fundo de funil distribuídos no mês, não improvisados.</p></div>
+<div data-reveal="120" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><div style="font-size:.9375rem;font-weight:600;color:var(--purple-700)">Design profissional e conteúdo autêntico</div><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:6px 0 0">Direção de arte dentro da identidade da marca, sem template genérico.</p></div>
+<div data-reveal="180" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><div style="font-size:.9375rem;font-weight:600;color:var(--purple-700)">Relatório mensal com insight acionável</div><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:6px 0 0">O que repetir, o que cortar e o que testar no mês seguinte.</p></div>
+</div>
+</div>
+<div data-reveal="80" style="display:flex;flex-direction:column;gap:24px">
+<div style="background:var(--surface-card);border:1px solid var(--border-strong);border-radius:20px;padding:32px;box-shadow:var(--shadow-sm)">
+<div style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">Pacotes</div>
+<div style="display:flex;flex-direction:column;gap:16px;margin-top:20px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:16px;border-bottom:1px solid var(--border-subtle)"><div><div style="font-family:var(--font-display);font-size:1.125rem;color:var(--purple-700)">Essencial</div><div style="font-size:.8125rem;color:var(--text-muted)">8 posts/mês · 1 canal</div></div><div style="font-size:.875rem;font-weight:600;color:var(--purple-700);white-space:nowrap">R$ 2.200/mês</div></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:16px;border-bottom:1px solid var(--border-subtle)"><div><div style="font-family:var(--font-display);font-size:1.125rem;color:var(--purple-700)">Consistente</div><div style="font-size:.8125rem;color:var(--text-muted)">12 posts/mês · 2 canais</div></div><div style="font-size:.875rem;font-weight:600;color:var(--purple-700);white-space:nowrap">R$ 3.400/mês</div></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><div><div style="font-family:var(--font-display);font-size:1.125rem;color:var(--purple-700)">Autoridade</div><div style="font-size:.8125rem;color:var(--text-muted)">16 posts/mês · 3 canais + vídeo</div></div><div style="font-size:.875rem;font-weight:600;color:var(--purple-700);white-space:nowrap">R$ 4.900/mês</div></div>
+</div>
+<p style="font-size:.8125rem;line-height:1.6;color:var(--text-muted);margin:20px 0 0">Contrato mínimo de 3 meses. Produção começa depois do calendário aprovado.</p>
+</div>
+<div style="background:var(--surface-inverse);border-radius:20px;padding:32px">
+<div style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-300)">Canais</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+<span style="font-size:.8125rem;color:var(--purple-25);border:1px solid var(--border-inverse);border-radius:999px;padding:6px 14px">Instagram</span>
+<span style="font-size:.8125rem;color:var(--purple-25);border:1px solid var(--border-inverse);border-radius:999px;padding:6px 14px">LinkedIn</span>
+<span style="font-size:.8125rem;color:var(--purple-25);border:1px solid var(--border-inverse);border-radius:999px;padding:6px 14px">Google Meu Negócio</span>
+<span style="font-size:.8125rem;color:var(--purple-25);border:1px solid var(--border-inverse);border-radius:999px;padding:6px 14px">YouTube Shorts</span>
+<span style="font-size:.8125rem;color:var(--purple-25);border:1px solid var(--border-inverse);border-radius:999px;padding:6px 14px">TikTok</span>
+</div>
+<p style="font-size:.8125rem;line-height:1.6;color:var(--purple-200);margin:20px 0 0">Escolhemos os canais no diagnóstico — estar em todos raramente é a melhor decisão.</p>
+</div>
+</div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:0 48px 96px">
+<div data-reveal style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">Outras soluções</div>
+<h2 data-reveal="60" style="font-family:var(--font-display);font-weight:500;font-size:2rem;color:var(--purple-700);margin:12px 0 24px">Funciona ainda melhor com</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+<a data-reveal href="#" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:20px;padding:32px;box-shadow:var(--shadow-xs);display:block;color:inherit"><div style="font-family:var(--font-mono);font-size:.6875rem;color:var(--purple-400)">02</div><h3 style="font-family:var(--font-display);font-weight:500;font-size:1.25rem;color:var(--purple-700);margin:6px 0 0">Tráfego pago</h3><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:8px 0 0">O conteúdo que já performou vira anúncio — com verba, não com sorte.</p></a>
+<a data-reveal="100" href="#" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:20px;padding:32px;box-shadow:var(--shadow-xs);display:block;color:inherit"><div style="font-family:var(--font-mono);font-size:.6875rem;color:var(--purple-400)">03</div><h3 style="font-family:var(--font-display);font-weight:500;font-size:1.25rem;color:var(--purple-700);margin:6px 0 0">Sites e landing pages</h3><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:8px 0 0">Um destino que converte o clique que o conteúdo gerou.</p></a>
+<a data-reveal="200" href="#" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:20px;padding:32px;box-shadow:var(--shadow-xs);display:block;color:inherit"><div style="font-family:var(--font-mono);font-size:.6875rem;color:var(--purple-400)">04</div><h3 style="font-family:var(--font-display);font-weight:500;font-size:1.25rem;color:var(--purple-700);margin:6px 0 0">Branding e identidade</h3><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:8px 0 0">A base: sem posicionamento claro, o conteúdo não tem o que repetir.</p></a>
+</div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:0 48px 96px">
+<div data-reveal style="font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-500)">Perguntas frequentes</div>
+<h2 data-reveal="60" style="font-family:var(--font-display);font-weight:500;font-size:2rem;color:var(--purple-700);margin:12px 0 24px">Sobre social media, especificamente</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div data-reveal style="background:var(--surface-subtle);border-radius:20px;padding:32px"><h3 style="font-family:var(--font-display);font-weight:500;font-size:1.125rem;color:var(--purple-700);margin:0">Quem grava os vídeos?</h3><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:8px 0 0">Você ou seu time, com roteiro e direção nossos. Gravação presencial em SC entra como adicional.</p></div>
+<div data-reveal="80" style="background:var(--surface-subtle);border-radius:20px;padding:32px"><h3 style="font-family:var(--font-display);font-weight:500;font-size:1.125rem;color:var(--purple-700);margin:0">Eu aprovo os posts antes?</h3><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:8px 0 0">Sim. O calendário do mês inteiro vai para aprovação antes de qualquer publicação.</p></div>
+<div data-reveal="160" style="background:var(--surface-subtle);border-radius:20px;padding:32px"><h3 style="font-family:var(--font-display);font-weight:500;font-size:1.125rem;color:var(--purple-700);margin:0">Preciso de tráfego pago junto?</h3><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:8px 0 0">Não é obrigatório, mas conteúdo sem verba cresce devagar. Sugerimos começar com o mínimo e escalar o que funciona.</p></div>
+<div data-reveal="240" style="background:var(--surface-subtle);border-radius:20px;padding:32px"><h3 style="font-family:var(--font-display);font-weight:500;font-size:1.125rem;color:var(--purple-700);margin:0">O que acontece se eu pausar?</h3><p style="font-size:.875rem;line-height:1.65;color:var(--text-muted);margin:8px 0 0">Você fica com todos os arquivos, o calendário e o painel. Nada é retido.</p></div>
+</div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:0 48px 96px">
+<div data-reveal style="background:var(--surface-inverse);border-radius:32px;padding:64px;display:flex;align-items:center;justify-content:space-between;gap:48px">
+<div><h2 style="font-family:var(--font-display);font-weight:300;font-size:2.5rem;line-height:1.15;letter-spacing:-.02em;color:var(--purple-25);margin:0">Seu feed pode trabalhar melhor.</h2><p style="color:var(--purple-200);line-height:1.65;margin:16px 0 0;max-width:480px">No diagnóstico gratuito analisamos seu perfil atual e mostramos os três ajustes de maior impacto.</p></div>
+<div style="flex-shrink:0"><x-import component-from-global-scope="AMUDesignSystem_1cce44.Button" variant="inverse" size="lg" iconRight="arrow-right" hint-size="230px,54px">Agendar diagnóstico</x-import><p style="font-size:.8125rem;color:var(--purple-300);margin:12px 0 0">Resposta em até 24h.</p></div>
+</div>
+</section>
+
+<footer style="background:var(--surface-inverse-deep);color:var(--purple-300);padding:48px 0">
+<div style="max-width:1200px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:center;font-size:.8125rem">
+<img src="../../assets/logo-horizontal-white.png" alt="AMUdesign" style="height:26px;display:block">
+<span>@amudesign.3d · 48 92003-3146 · Santa Catarina</span>
+</div>
+</footer>
+</div>
+</x-dc>
+</body>
+</html>

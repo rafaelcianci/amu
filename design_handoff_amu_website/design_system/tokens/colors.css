@@ -1,0 +1,65 @@
+:root{
+/* --- Brand base: sampled from the AMUdesign logo (#340065 on #F8F7FF) --- */
+--purple-950:#12001F;
+--purple-900:#1C0035;
+--purple-800:#260049;
+--purple-700:#340065; /* Roxo AMU - the logo purple */
+--purple-600:#4A0F87;
+--purple-500:#6224A8;
+--purple-400:#8348C9;
+--purple-300:#A97FE0;
+--purple-200:#CFB6F0;
+--purple-100:#E7DCFA;
+--purple-50:#F1EBFC;
+--purple-25:#F8F7FF; /* Lilac paper - logo artboard background */
+
+/* --- Neutrals: violet-tinted greys, never pure grey --- */
+--ink:#160F22;
+--neutral-800:#2A2336;
+--neutral-700:#453E52;
+--neutral-600:#615A70;
+--neutral-500:#847D92;
+--neutral-400:#A9A3B5;
+--neutral-300:#CBC7D5;
+--neutral-200:#E3E0EA;
+--neutral-100:#F1F0F5;
+--neutral-50:#F9F8FB;
+--white:#FFFFFF;
+
+/* --- Semantic status (used sparingly, only in UI) --- */
+--success-600:#1F7A55;
+--success-100:#DCF3E9;
+--warning-600:#9A6407;
+--warning-100:#FBEED2;
+--danger-600:#B3223B;
+--danger-100:#FBE0E5;
+--info-600:#2A5FC9;
+--info-100:#DEE7FB;
+
+/* --- Semantic aliases: use these in components --- */
+--text-strong:var(--purple-700);
+--text-body:var(--neutral-700);
+--text-muted:var(--neutral-500);
+--text-inverse:var(--purple-25);
+--text-link:var(--purple-600);
+--text-link-hover:var(--purple-800);
+
+--surface-page:var(--purple-25);
+--surface-card:var(--white);
+--surface-subtle:var(--purple-50);
+--surface-inverse:var(--purple-700);
+--surface-inverse-deep:var(--purple-900);
+
+--border-subtle:var(--neutral-200);
+--border-default:var(--neutral-300);
+--border-strong:var(--purple-200);
+--border-inverse:rgba(248,247,255,.24);
+
+--action-primary:var(--purple-700);
+--action-primary-hover:var(--purple-800);
+--action-primary-active:var(--purple-900);
+--action-secondary-bg:var(--purple-100);
+--action-ghost-hover:var(--purple-50);
+--focus-ring:var(--purple-400);
+--overlay:rgba(22,15,34,.44);
+}

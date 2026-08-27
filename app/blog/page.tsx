@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/layout/ImageSlot";
 import { Footer } from "@/components/layout/Footer";
@@ -55,9 +56,9 @@ export default function BlogPage() {
       </section>
 
       <section className="amu-section-rail" style={{ paddingBottom: "var(--section-y)" }}>
-        <a
+        <Link
           data-reveal=""
-          href="#"
+          href={`/blog/${FEATURED_POST.slug}`}
           className="amu-content-split"
           style={{
             background: "var(--surface-card)",
@@ -101,7 +102,7 @@ export default function BlogPage() {
               <span>{FEATURED_POST.date}</span>
             </div>
           </div>
-        </a>
+        </Link>
       </section>
 
       <ParallaxBand quote="Publicamos o que testamos — inclusive o que não funcionou." placeholder="Imagem full-bleed — mesa de trabalho, painel, cidade (paisagem)" speed={0.28} height={360} inset={-80} />
@@ -109,7 +110,7 @@ export default function BlogPage() {
       <section className="amu-section-rail amu-section-y">
         <div className="amu-grid-3">
           {BLOG_POSTS.map((post, i) => (
-            <a key={post.slug} href="#" data-reveal={(i % 3) * 100} style={{ color: "inherit", display: "block" }}>
+            <Link key={post.slug} href={`/blog/${post.slug}`} data-reveal={(i % 3) * 100} style={{ color: "inherit", display: "block" }}>
               <div style={{ position: "relative", aspectRatio: "4 / 3" }}>
                 <ImageSlot shape="rounded" radius={20} placeholder="Capa do artigo (4:3)" />
               </div>
@@ -135,7 +136,7 @@ export default function BlogPage() {
               </h3>
               <p style={{ fontSize: "var(--fs-body-sm)", lineHeight: "var(--lh-relaxed)", color: "var(--text-muted)", margin: "var(--space-2) 0 0" }}>{post.excerpt}</p>
               <div style={{ fontSize: "var(--fs-caption)", color: "var(--text-muted)", marginTop: "var(--space-4)" }}>{post.date}</div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

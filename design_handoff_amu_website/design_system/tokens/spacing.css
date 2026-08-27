@@ -1,0 +1,41 @@
+:root{
+--space-0:0; /* @kind spacing */
+--space-1:4px; /* @kind spacing */
+--space-2:8px; /* @kind spacing */
+--space-3:12px; /* @kind spacing */
+--space-4:16px; /* @kind spacing */
+--space-5:24px; /* @kind spacing */
+--space-6:32px; /* @kind spacing */
+--space-7:48px; /* @kind spacing */
+--space-8:64px; /* @kind spacing */
+--space-9:96px; /* @kind spacing */
+--space-10:128px; /* @kind spacing */
+
+
+--radius-xs:4px; /* @kind radius */
+--radius-sm:8px; /* @kind radius */
+--radius-md:14px; /* @kind radius */
+--radius-lg:20px; /* @kind radius */
+--radius-xl:32px; /* @kind radius */
+--radius-pill:999px; /* @kind radius */
+--radius-circle:50%; /* @kind radius */
+
+
+--border-width:1px; /* @kind spacing */
+--border-width-thick:1.5px; /* @kind spacing */
+
+
+--container-max:1200px; /* @kind spacing */
+
+--container-narrow:720px; /* @kind spacing */
+
+--gutter:clamp(20px,5vw,64px); /* @kind spacing */
+
+--section-y:clamp(64px,9vw,128px); /* @kind spacing */
+
+
+--control-h-sm:34px; /* @kind spacing */
+--control-h-md:44px; /* @kind spacing */
+--control-h-lg:54px; /* @kind spacing */
+
+}
