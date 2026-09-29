@@ -5,11 +5,11 @@ import { RouteScrollFX } from "@/components/motion/RouteScrollFX";
 
 export const metadata: Metadata = {
   title: {
-    default: "AMUdesign — Marketing digital com estratégia",
-    template: "%s · AMUdesign",
+    default: "Agência AMU — Marketing digital com estratégia",
+    template: "%s · Agência AMU",
   },
   description:
-    "AMU — Studio Criativo (AMUdesign): marca, conteúdo e mídia paga operando como um sistema só, com cada real rastreado do clique até a venda. Santa Catarina, atendimento em todo o Brasil.",
+    "Agência AMU: marca, conteúdo e mídia paga operando como um sistema só, com cada real rastreado do clique até a venda. Santa Catarina, atendimento em todo o Brasil.",
   metadataBase: new URL("https://amudesign.com.br"),
 };
 

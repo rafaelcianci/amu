@@ -122,7 +122,7 @@ export function DiagnosisForm() {
           id="lgpd"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          label="Autorizo o uso dos meus dados para retorno da AMUdesign, conforme a LGPD."
+          label="Autorizo o uso dos meus dados para retorno da Agência AMU, conforme a LGPD."
         />
 
         <Switch id="newsletter" checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} label="Quero receber o e-mail mensal do blog" />

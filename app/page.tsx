@@ -14,7 +14,7 @@ import { TESTIMONIALS, MANIFESTO_PILLARS, HOME_FAQ, DIFERENCIAIS } from "@/data/
 import { CTA_HREF } from "@/lib/nav";
 
 export const metadata: Metadata = {
-  title: "AMUdesign — Marca, conteúdo e mídia paga como um sistema só",
+  title: "Agência AMU — Marca, conteúdo e mídia paga como um sistema só",
   description:
     "Pare de investir em marketing que não vira venda. A AMU constrói marca, conteúdo e mídia paga como um sistema só, com cada real rastreado do clique até a venda.",
 };

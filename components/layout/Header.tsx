@@ -3,10 +3,11 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Logo } from "@/components/ui/Logo";
+
 import { Button } from "@/components/ui/Button";
 import { IconButton } from "@/components/ui/IconButton";
 import { NAV_ITEMS, CTA_HREF } from "@/lib/nav";
+import LogoSvg from "@/public/assets/logo.svg";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -41,8 +42,9 @@ export function Header() {
           gap: "var(--space-6)",
         }}
       >
-        <Link href="/" aria-label="AMUdesign — início">
-          <Logo height={30} />
+        <Link href="/" aria-label="Agência AMU — início" style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--purple-700)" }}>
+          <LogoSvg aria-hidden style={{ height: 50, width: "auto", display: "block" }} />
+          <h1 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "200", letterSpacing: "0.3px", color: "var(--purple-700)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h1>
         </Link>
 
         <nav

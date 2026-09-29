@@ -1,6 +1,6 @@
-# AMUdesign — site institucional
+# Agência AMU — site institucional
 
-Site de marketing da **AMU — Studio Criativo (AMUdesign)**, construído em Next.js (App Router) + TypeScript a partir do handoff de design em `design_handoff_amu_website/` (tokens, componentes e as cinco páginas de referência `.dc.html`).
+Site de marketing da **Agência AMU**, construído em Next.js (App Router) + TypeScript a partir do handoff de design em `design_handoff_amu_website/` (tokens, componentes e as cinco páginas de referência `.dc.html`).
 
 ## Rodando localmente
 

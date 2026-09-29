@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+import LogoSvg from "@/public/assets/logo.svg";
+
+const INSTAGRAM_URL = "https://www.instagram.com/agenciaamu";
+
 const SOLUTION_LINKS = [
   { label: "Social media", href: "/servicos/social-media" },
   { label: "Tráfego pago", href: "/servicos/trafego-pago" },
@@ -18,8 +22,17 @@ export function Footer({ variant = "compact" }: FooterProps) {
       <footer style={{ background: "var(--surface-inverse-deep)", color: "var(--purple-300)", padding: "var(--space-7) 0" }}>
         <div className="amu-section-rail amu-footer-compact-row" style={{ fontSize: "var(--fs-caption)" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo-horizontal-white.png" alt="AMUdesign" style={{ height: 26, width: "auto" }} />
-          <span>@amudesign.3d · 48 92003-3146 · Santa Catarina</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--white)" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <LogoSvg aria-hidden style={{ height: 40, width: "auto", display: "block", color: "var(--white)" }} />
+            <h2 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "200", letterSpacing: "0.3px", color: "var(--white)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h2>
+          </div>
+          <span>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+              @agenciaamu
+            </a>{" "}
+            · 48 92003-3146 · Santa Catarina
+          </span>
         </div>
       </footer>
     );
@@ -33,8 +46,11 @@ export function Footer({ variant = "compact" }: FooterProps) {
           style={{ paddingBottom: "var(--space-6)", borderBottom: "1px solid var(--border-inverse)" }}
         >
           <div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo-horizontal-white.png" alt="AMUdesign" style={{ height: 30, width: "auto" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--white)" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <LogoSvg aria-hidden style={{ height: 40, width: "auto", display: "block", color: "var(--white)" }} />
+              <h2 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "200", letterSpacing: "0.3px", color: "var(--white)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h2>
+            </div>
             <p style={{ fontSize: "var(--fs-body-sm)", lineHeight: "var(--lh-relaxed)", margin: "var(--space-4) 0 0", maxWidth: 340 }}>
               Marketing digital para marcas que querem crescer com estratégia, estética e resultado.
             </p>
@@ -56,7 +72,9 @@ export function Footer({ variant = "compact" }: FooterProps) {
               Contato
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)", marginTop: "var(--space-4)", fontSize: "var(--fs-body-sm)", color: "var(--purple-25)" }}>
-              <span>@amudesign.3d</span>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+                @agenciaamu
+              </a>
               <span>48 92003-3146</span>
               <span>Santa Catarina, Brasil</span>
             </div>
@@ -73,7 +91,7 @@ export function Footer({ variant = "compact" }: FooterProps) {
             color: "var(--purple-300)",
           }}
         >
-          <span>© 2026 AMUdesign. Todos os direitos reservados.</span>
+          <span>© 2026 Agência AMU. Todos os direitos reservados.</span>
           <span>Atendemos todo o Brasil.</span>
         </div>
       </div>
