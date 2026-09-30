@@ -62,7 +62,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             </div>
           </div>
           <div data-parallax="0.1" style={{ position: "relative", aspectRatio: "4 / 5" }}>
-            <ImageSlot shape="rounded" radius={32} placeholder={solution.heroImagePlaceholder} />
+            <ImageSlot shape="rounded" radius={32} placeholder={solution.heroImagePlaceholder} src={`/assets/images/servicos/${solution.slug}.webp`} alt={`Ilustração do serviço de ${solution.name.toLowerCase()} da Agência AMU`} />
           </div>
         </div>
       </section>

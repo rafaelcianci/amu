@@ -7,6 +7,10 @@ export interface ImageSlotProps {
   radius?: number;
   /** States what the photo is and its aspect ratio — shown as the placeholder label. */
   placeholder?: string;
+  /** Image to show in the slot. When set, it fills the frame (object-fit: cover) and the placeholder label is hidden. */
+  src?: string;
+  /** Alt text for `src`. Use "" when the image is decorative (e.g. a card cover next to its own title). */
+  alt?: string;
   style?: CSSProperties;
 }
 
@@ -17,7 +21,7 @@ export interface ImageSlotProps {
  * Meant to be dropped inside a parent with `position: relative` and a set
  * size (commonly `aspect-ratio`), which it fills via `position: absolute; inset: 0`.
  */
-export function ImageSlot({ shape = "rect", radius = 0, placeholder, style }: ImageSlotProps) {
+export function ImageSlot({ shape = "rect", radius = 0, placeholder, src, alt = "", style }: ImageSlotProps) {
   const borderRadius = shape === "circle" ? "50%" : shape === "rounded" ? `${radius}px` : 0;
   return (
     <div
@@ -35,6 +39,10 @@ export function ImageSlot({ shape = "rect", radius = 0, placeholder, style }: Im
         ...style,
       }}
     >
+      {src ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={alt} loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      ) : (
       <span
         style={{
           fontFamily: "var(--font-text)",
@@ -47,6 +55,7 @@ export function ImageSlot({ shape = "rect", radius = 0, placeholder, style }: Im
       >
         {placeholder}
       </span>
+      )}
     </div>
   );
 }

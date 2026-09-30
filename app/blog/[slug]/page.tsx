@@ -5,7 +5,7 @@ import { ImageSlot } from "@/components/layout/ImageSlot";
 import { Footer } from "@/components/layout/Footer";
 import { Overline } from "@/components/sections/Overline";
 import { ClosingCta } from "@/components/sections/ClosingCta";
-import { ALL_POSTS, getPostBySlug, getRelatedPosts } from "@/data/blog";
+import { ALL_POSTS, getPostBySlug, getRelatedPosts, postCover, postCoverWide } from "@/data/blog";
 
 export function generateStaticParams() {
   return ALL_POSTS.map((p) => ({ slug: p.slug }));
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <section className="amu-section-rail" style={{ paddingBottom: "var(--space-8)" }}>
         <div style={{ position: "relative", aspectRatio: "16 / 9", maxWidth: "var(--container-narrow)" }}>
-          <ImageSlot shape="rounded" radius={20} placeholder="Imagem de capa do artigo (16:9)" />
+          <ImageSlot shape="rounded" radius={20} placeholder="Imagem de capa do artigo (16:9)" src={postCoverWide(post.slug)} />
         </div>
       </section>
 
@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {related.map((r, i) => (
               <Link key={r.slug} href={`/blog/${r.slug}`} data-reveal={i * 100} style={{ color: "inherit", display: "block" }}>
                 <div style={{ position: "relative", aspectRatio: "4 / 3" }}>
-                  <ImageSlot shape="rounded" radius={20} placeholder="Capa do artigo (4:3)" />
+                  <ImageSlot shape="rounded" radius={20} placeholder="Capa do artigo (4:3)" src={postCover(r.slug)} />
                 </div>
                 <div style={{ display: "flex", gap: 10, alignItems: "center", marginTop: "var(--space-4)", fontSize: "var(--fs-caption)", color: "var(--text-muted)" }}>
                   <span

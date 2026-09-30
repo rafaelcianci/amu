@@ -12,6 +12,11 @@ export interface BlogPost {
   featured?: boolean;
 }
 
+/** Cover images live in /public/assets/images/blog, named after the post slug. */
+export const postCover = (slug: string) => `/assets/images/blog/${slug}.webp`; // 4:3 — cards
+export const postCoverWide = (slug: string) => `/assets/images/blog/${slug}-16x9.webp`; // 16:9 — article header
+export const postCoverFeatured = (slug: string) => `/assets/images/blog/${slug}-16x11.webp`; // 16:11 — featured card
+
 export const BLOG_CATEGORIES = ["Todos", "Tráfego pago", "Social media", "Branding", "Dados"] as const;
 
 export const FEATURED_POST: BlogPost = {
