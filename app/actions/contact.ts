@@ -32,6 +32,11 @@ function labelFor(options: { value: string; label: string }[], value: unknown) {
   return options.find((o) => o.value === value)?.label ?? "Não informado";
 }
 
+function senderAddress() {
+  const from = process.env.CONTACT_EMAIL_FROM?.trim() || "contato@agenciaamu.com.br";
+  return from.includes("<") ? from : `Agência AMU <${from}>`;
+}
+
 /** Cloudflare's always-pass test secret, used only outside production. */
 const TURNSTILE_TEST_SECRET = "1x0000000000000000000000000000000AA";
 
@@ -69,7 +74,7 @@ async function sendToAgency(subject: string, content: { text: string; html: stri
 
   try {
     const { error } = await new Resend(apiKey).emails.send({
-      from: process.env.CONTACT_EMAIL_FROM || "Agência AMU <onboarding@resend.dev>",
+      from: senderAddress(),
       to,
       replyTo,
       subject: subject.replace(/\s+/g, " "),
