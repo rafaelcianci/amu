@@ -71,7 +71,8 @@ export default function HomePage() {
             />
           </div>
           <div data-parallax="0.12" style={{ position: "relative", aspectRatio: "4 / 5" }}>
-            <ImageSlot shape="rounded" radius={32} placeholder="Foto principal — equipe, estúdio ou dashboard (4:5)" />
+            {/* <ImageSlot shape="rounded" radius={32} placeholder="Foto principal — equipe, estúdio ou dashboard (4:5)" /> */}
+            <img style={{ inset: 0, borderRadius: "32px", objectFit: "cover" }} src="/assets/images/estudio.png" alt="Foto principal — equipe, estúdio ou dashboard (4:5)" />
           </div>
         </div>
       </section>
@@ -139,8 +140,8 @@ export default function HomePage() {
                 color: "inherit",
               }}
             >
-              <div style={{ position: "relative", aspectRatio: "16 / 10" }}>
-                <ImageSlot shape="rect" placeholder={`Imagem — ${s.name.toLowerCase()} (16:10)`} />
+              <div style={{ position: "relative", aspectRatio: "14 / 10" }}>
+                <ImageSlot shape="rect" style={{ backgroundImage: `url(${s.image})`, backgroundSize: "cover", backgroundPosition: "center" }} />
               </div>
               <div style={{ padding: "var(--space-5) var(--space-6) 0" }}>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-overline)", color: "var(--purple-400)" }}>{s.index}</div>

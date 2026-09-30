@@ -16,7 +16,7 @@ export function ParallaxBand({
   return (
     <section style={{ position: "relative", height, overflow: "hidden" }}>
       <div data-parallax={speed} style={{ position: "absolute", inset: `${inset}px 0` }}>
-        <ImageSlot shape="rect" placeholder={placeholder} />
+        <ImageSlot shape="rect" style={{ borderRadius: "0", backgroundImage: "url(/assets/images/equipe_trabalhando.webp)", backgroundSize: "cover", backgroundPosition: "top center" }} />
       </div>
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(28,0,53,.78), rgba(28,0,53,.18))" }} />
       <div className="amu-section-rail" style={{ position: "absolute", inset: "auto 0 0", paddingTop: 0, paddingBottom: "var(--space-6)" }}>

@@ -33,6 +33,7 @@ export interface SolutionFaq {
 }
 
 export interface Solution {
+  image?: string;
   slug: string;
   index: string;
   name: string;
@@ -71,6 +72,7 @@ export const SOLUTIONS: Solution[] = [
     heroImagePlaceholder: "Mockup de feed ou foto de produção (4:5)",
     priceNote: "a partir de R$ 2.200/mês",
     ctaLabel: "Pedir proposta",
+    image: "/assets/images/social_media.webp",
     metrics: [
       { label: "Alcance", value: "Rastreado", note: "Em tempo real, por post e por formato." },
       { label: "Salvamentos", value: "No painel", note: "A métrica que mostra conteúdo útil de verdade." },
@@ -116,6 +118,7 @@ export const SOLUTIONS: Solution[] = [
     heroImagePlaceholder: "Mockup de painel de campanha ou anúncio (4:5)",
     priceNote: "a partir de R$ 1.800/mês + verba",
     ctaLabel: "Pedir proposta",
+    image: "/assets/images/trafego_pago.avif",
     metrics: [
       { label: "Custo por lead", value: "No painel", note: "Atualizado em tempo real, por campanha e por canal." },
       { label: "Origem da venda", value: "Com UTM", note: "Do clique até o CRM, sem lacuna no meio do caminho." },
@@ -161,6 +164,7 @@ export const SOLUTIONS: Solution[] = [
     heroImagePlaceholder: "Mockup de site ou landing page (4:5)",
     priceNote: "a partir de R$ 4.900",
     ctaLabel: "Pedir proposta",
+    image: "/assets/images/site_landing_pages.avif",
     metrics: [
       { label: "Velocidade", value: "Otimizada", note: "Carregamento pensado para não perder visita por demora." },
       { label: "Formulário", value: "Rastreado", note: "Cada envio identificado por canal e por campanha." },

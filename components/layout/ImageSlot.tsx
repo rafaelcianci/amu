@@ -6,7 +6,7 @@ export interface ImageSlotProps {
   /** Corner radius in px, used when shape="rounded". */
   radius?: number;
   /** States what the photo is and its aspect ratio — shown as the placeholder label. */
-  placeholder: string;
+  placeholder?: string;
   style?: CSSProperties;
 }
 
