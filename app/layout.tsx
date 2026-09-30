@@ -3,6 +3,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { RouteScrollFX } from "@/components/motion/RouteScrollFX";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   },
   description:
     "Agência AMU: marca, conteúdo e mídia paga operando como um sistema só, com cada real rastreado do clique até a venda. Santa Catarina, atendimento em todo o Brasil.",
-  metadataBase: new URL("https://amudesign.com.br"),
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
