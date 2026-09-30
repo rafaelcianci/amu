@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { RouteScrollFX } from "@/components/motion/RouteScrollFX";
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <RouteScrollFX />
       </body>
+      <GoogleAnalytics gaId="G-NYY0ZMZKV6" />
     </html>
   );
 }
