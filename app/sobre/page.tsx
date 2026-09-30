@@ -48,7 +48,8 @@ export default function SobrePage() {
           />
         </div>
         <div data-parallax="0.12" style={{ position: "relative", aspectRatio: "4 / 5" }}>
-          <ImageSlot shape="rounded" radius={32} placeholder="Foto do estúdio ou da fundadora (4:5)" />
+          {/* <ImageSlot shape="rounded" radius={32} placeholder="Foto do estúdio ou da fundadora (4:5)" /> */}
+          <img src="/assets/images/sobre.png" alt="Sobre a AMU - Foto do estúdio" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "var(--radius-lg)" }} />
         </div>
       </section>
 
@@ -83,7 +84,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <section style={{ background: "var(--surface-inverse)", padding: "var(--section-y) 0" }}>
+      {/* <section style={{ background: "var(--surface-inverse)", padding: "var(--section-y) 0" }}>
         <div className="amu-section-rail">
           <Overline tone="inverse" reveal>
             Time
@@ -106,10 +107,12 @@ export default function SobrePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="amu-section-rail amu-section-y">
-        <TestimonialCard {...TESTIMONIALS.sobre} />
+      <section style={{ background: "var(--surface-inverse)", padding: "var(--section-y) 0", marginBottom: "var(--section-y)" }}>
+        <div className="amu-section-rail">
+          <TestimonialCard {...TESTIMONIALS.sobre} />
+        </div>
       </section>
 
       <ClosingCta
