@@ -71,8 +71,7 @@ export default function HomePage() {
             />
           </div>
           <div data-parallax="0.12" style={{ position: "relative", aspectRatio: "4 / 5" }}>
-            {/* <ImageSlot shape="rounded" radius={32} placeholder="Foto principal — equipe, estúdio ou dashboard (4:5)" /> */}
-            <img style={{ inset: 0, borderRadius: "32px", objectFit: "cover" }} src="/assets/images/estudio.png" alt="Foto principal — equipe, estúdio ou dashboard (4:5)" />
+            <img style={{ inset: 0, borderRadius: "32px", objectFit: "cover" }} src="/assets/images/estudio.jpg" alt="Foto principal — equipe, estúdio ou dashboard (4:5)" />
           </div>
         </div>
       </section>

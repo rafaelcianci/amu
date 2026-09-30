@@ -48,8 +48,7 @@ export default function SobrePage() {
           />
         </div>
         <div data-parallax="0.12" style={{ position: "relative", aspectRatio: "4 / 5" }}>
-          {/* <ImageSlot shape="rounded" radius={32} placeholder="Foto do estúdio ou da fundadora (4:5)" /> */}
-          <img src="/assets/images/sobre.png" alt="Sobre a AMU - Foto do estúdio" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "var(--radius-lg)" }} />
+          <img src="/assets/images/sobre.jpg" alt="Sobre a AMU - Foto do estúdio" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "var(--radius-lg)" }} />
         </div>
       </section>
 
