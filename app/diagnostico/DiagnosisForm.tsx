@@ -11,6 +11,7 @@ import { Toast } from "@/components/ui/Toast";
 import { SOLUTIONS } from "@/data/solutions";
 import { sendDiagnosis } from "@/app/actions/contact";
 import { BUDGET_OPTIONS, TIMING_OPTIONS } from "./options";
+import { Turnstile, type TurnstileHandle } from "./Turnstile";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,6 +24,8 @@ export function DiagnosisForm() {
   const [budget, setBudget] = React.useState("");
   const [consent, setConsent] = React.useState(false);
   const [website, setWebsite] = React.useState("");
+  const [turnstileToken, setTurnstileToken] = React.useState<string | null>(null);
+  const turnstileRef = React.useRef<TurnstileHandle>(null);
 
   const [emailInvalid, setEmailInvalid] = React.useState(false);
   const [toast, setToast] = React.useState<string | null>(null);
@@ -38,9 +41,14 @@ export function DiagnosisForm() {
       return;
     }
     setEmailInvalid(false);
+    if (!turnstileToken) {
+      setToast("Aguarde a verificação de segurança terminar e tente de novo.");
+      return;
+    }
 
     startTransition(async () => {
-      const result = await sendDiagnosis({ name, email, service, timing, about, budget, consent, website });
+      const result = await sendDiagnosis({ name, email, service, timing, about, budget, consent, website, turnstileToken });
+      turnstileRef.current?.reset();
       if (!result.ok) {
         setToast(result.message);
         return;
@@ -139,7 +147,9 @@ export function DiagnosisForm() {
           style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }}
         />
 
-        <Button type="submit" size="lg" iconRight={pending ? undefined : "arrow-right"} fullWidth disabled={!consent || pending}>
+        <Turnstile ref={turnstileRef} onToken={setTurnstileToken} />
+
+        <Button type="submit" size="lg" iconRight={pending ? undefined : "arrow-right"} fullWidth disabled={!consent || !turnstileToken || pending}>
           {pending ? "Enviando…" : "Enviar briefing"}
         </Button>
       </form>

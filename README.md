@@ -13,6 +13,8 @@ Abra [http://localhost:3000](http://localhost:3000).
 
 O formulário de diagnóstico (`/diagnostico`) manda e-mail para a agência pelo [Resend](https://resend.com). Copie `.env.example` para `.env.local` e preencha `RESEND_API_KEY` e `CONTACT_EMAIL_TO`. Sem essas variáveis, o site funciona, mas os envios falham com uma mensagem de erro.
 
+O formulário é protegido pelo [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/). Em produção, preencha `NEXT_PUBLIC_TURNSTILE_SITE_KEY` e `TURNSTILE_SECRET_KEY`. Localmente, sem essas chaves, o site usa as chaves de teste do Cloudflare, que sempre aprovam.
+
 Para testar a build de produção:
 
 ```bash
