@@ -4,14 +4,22 @@
 export const TESTIMONIALS = {
   home: {
     quote:
-      "Chegamos com um logo e saímos com marca, conteúdo e campanha rodando juntos. Pela primeira vez sabemos de onde vem cada pedido.",
-    name: "Marina Duarte",
-    org: "Serra Café",
+      "A AMU refez nossa marca, otimizou o site para o Google e ampliou o alcance dos nossos anúncios. Hoje o escritório aparece para quem procura contabilidade na região, com uma imagem à altura do nosso trabalho.",
+    name: "Paulo",
+    org: "Expert Contabilidade",
+    image: {
+      src: "/assets/clientes/expert-contabilidade.jpg",
+      alt: "Sala de reunião da Expert Assessoria Contábil, com o logo na parede",
+    },
+    url: "https://www.expertcontabil.com.br/",
   },
   sobre: {
-    quote: "Já passei por três agências. É a primeira vez que a pessoa da reunião é a mesma que mexe na campanha.",
-    name: "Rafael Menezes",
-    org: "Casa Pinhão",
+    quote:
+      "A AMU criou a identidade da Auralis, fez o nosso site e cuida do conteúdo das redes sociais. Chegamos ao mercado com cara de empresa estabelecida, e a marca fala a mesma língua em todo lugar.",
+    name: "Pedro",
+    org: "Auralis BPO Financeiro",
+    image: { src: "/assets/clientes/auralis.png", alt: "Logo da Auralis" },
+    url: "https://www.auralisbpo.com/",
   },
 };
 

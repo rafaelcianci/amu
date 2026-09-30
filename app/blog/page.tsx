@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/layout/ImageSlot";
 import { Footer } from "@/components/layout/Footer";
 import { Overline } from "@/components/sections/Overline";
@@ -138,47 +137,6 @@ export default function BlogPage() {
               <div style={{ fontSize: "var(--fs-caption)", color: "var(--text-muted)", marginTop: "var(--space-4)" }}>{post.date}</div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      <section className="amu-section-rail" style={{ paddingBottom: "var(--section-y)" }}>
-        <div
-          data-reveal=""
-          className="amu-cta-row"
-          style={{ background: "var(--surface-inverse)", borderRadius: "var(--radius-xl)", padding: "var(--space-8)" }}
-        >
-          <div>
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: "var(--fw-light)", fontSize: "2rem", lineHeight: 1.2, color: "var(--purple-25)", margin: 0 }}>
-              Um e-mail por mês, sem enrolação.
-            </h2>
-            <p style={{ color: "var(--purple-200)", lineHeight: "var(--lh-relaxed)", margin: "var(--space-4) 0 0", maxWidth: 460 }}>
-              O que testamos, o que deu certo e o número que provou. Nada de dica genérica.
-            </p>
-          </div>
-          <form style={{ flexShrink: 0, display: "flex", gap: "var(--space-3)", alignItems: "center", flexWrap: "wrap" }}>
-            <input
-              type="email"
-              required
-              placeholder="voce@empresa.com"
-              style={{
-                height: "var(--control-h-lg)",
-                width: 280,
-                maxWidth: "100%",
-                boxSizing: "border-box",
-                borderRadius: "var(--radius-md)",
-                border: "1px solid var(--border-inverse)",
-                background: "rgba(248,247,255,.08)",
-                color: "var(--purple-25)",
-                padding: "0 var(--space-4)",
-                fontFamily: "var(--font-text)",
-                fontSize: "var(--fs-body-sm)",
-                outline: "none",
-              }}
-            />
-            <Button variant="inverse" size="lg" type="submit">
-              Assinar
-            </Button>
-          </form>
         </div>
       </section>
 

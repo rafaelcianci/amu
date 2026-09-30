@@ -11,6 +11,8 @@ npm run dev
 
 Abra [http://localhost:3000](http://localhost:3000).
 
+O formulário de diagnóstico (`/diagnostico`) manda e-mail para a agência pelo [Resend](https://resend.com). Copie `.env.example` para `.env.local` e preencha `RESEND_API_KEY` e `CONTACT_EMAIL_TO`. Sem essas variáveis, o site funciona, mas os envios falham com uma mensagem de erro.
+
 Para testar a build de produção:
 
 ```bash
@@ -33,4 +35,3 @@ npm run start
 - **Fotografia**: nenhuma foto real existe ainda. Todo `ImageSlot` é um bloco lilás com legenda — substitua pelos arquivos reais do estúdio quando chegarem (não usar banco de imagens).
 - **Preços, estatísticas de confiança, nomes de clientes/depoimentos e nomes do time** são placeholders de voz de marca, não fatos — sinalizados no handoff original. Ajuste antes de publicar.
 - **Artigos do blog**: só o índice foi desenhado; os cards ainda não linkam para páginas de artigo individuais.
-- **Envio do formulário** (`/diagnostico`) e da newsletter (`/blog`) fazem apenas validação client-side e não estão conectados a um backend/CRM real.

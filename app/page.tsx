@@ -248,7 +248,7 @@ export default function HomePage() {
             </div>
           </div>
           <div style={{ marginTop: "var(--space-6)" }}>
-            <TestimonialCard quote={TESTIMONIALS.home.quote} name={TESTIMONIALS.home.name} org={TESTIMONIALS.home.org} />
+            <TestimonialCard {...TESTIMONIALS.home} />
           </div>
         </div>
       </section>

@@ -5,24 +5,12 @@ import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Radio } from "@/components/ui/Radio";
 import { Checkbox } from "@/components/ui/Checkbox";
-import { Switch } from "@/components/ui/Switch";
 import { Button } from "@/components/ui/Button";
 import { Dialog } from "@/components/ui/Dialog";
 import { Toast } from "@/components/ui/Toast";
 import { SOLUTIONS } from "@/data/solutions";
-
-const TIMING_OPTIONS = [
-  { value: "o-quanto-antes", label: "O quanto antes" },
-  { value: "proximas-semanas", label: "Nas próximas semanas" },
-  { value: "ainda-pesquisando", label: "Ainda estou pesquisando" },
-];
-
-const BUDGET_OPTIONS = [
-  { value: "ate-2000", label: "Até R$ 2.000/mês" },
-  { value: "2000-5000", label: "R$ 2.000 a R$ 5.000/mês" },
-  { value: "acima-5000", label: "Acima de R$ 5.000/mês" },
-  { value: "conversar", label: "Prefiro conversar primeiro" },
-];
+import { sendDiagnosis } from "@/app/actions/contact";
+import { BUDGET_OPTIONS, TIMING_OPTIONS } from "./options";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -34,27 +22,43 @@ export function DiagnosisForm() {
   const [about, setAbout] = React.useState("");
   const [budget, setBudget] = React.useState("");
   const [consent, setConsent] = React.useState(false);
-  const [newsletter, setNewsletter] = React.useState(true);
+  const [website, setWebsite] = React.useState("");
 
   const [emailInvalid, setEmailInvalid] = React.useState(false);
-  const [toast, setToast] = React.useState(false);
+  const [toast, setToast] = React.useState<string | null>(null);
   const [success, setSuccess] = React.useState(false);
+  const [pending, startTransition] = React.useTransition();
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const validEmail = EMAIL_RE.test(email.trim());
     if (!validEmail) {
       setEmailInvalid(true);
-      setToast(true);
+      setToast("Informe um e-mail válido para retornarmos.");
       return;
     }
     setEmailInvalid(false);
-    setSuccess(true);
+
+    startTransition(async () => {
+      const result = await sendDiagnosis({ name, email, service, timing, about, budget, consent, website });
+      if (!result.ok) {
+        setToast(result.message);
+        return;
+      }
+      setName("");
+      setEmail("");
+      setService("");
+      setTiming("");
+      setAbout("");
+      setBudget("");
+      setConsent(false);
+      setSuccess(true);
+    });
   }
 
   React.useEffect(() => {
     if (!toast) return;
-    const t = setTimeout(() => setToast(false), 5000);
+    const t = setTimeout(() => setToast(null), 5000);
     return () => clearTimeout(t);
   }, [toast]);
 
@@ -125,10 +129,18 @@ export function DiagnosisForm() {
           label="Autorizo o uso dos meus dados para retorno da Agência AMU, conforme a LGPD."
         />
 
-        <Switch id="newsletter" checked={newsletter} onChange={(e) => setNewsletter(e.target.checked)} label="Quero receber o e-mail mensal do blog" />
+        <input
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden
+          style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }}
+        />
 
-        <Button type="submit" size="lg" iconRight="arrow-right" fullWidth disabled={!consent}>
-          Enviar briefing
+        <Button type="submit" size="lg" iconRight={pending ? undefined : "arrow-right"} fullWidth disabled={!consent || pending}>
+          {pending ? "Enviando…" : "Enviar briefing"}
         </Button>
       </form>
 
@@ -142,7 +154,7 @@ export function DiagnosisForm() {
 
       {toast ? (
         <div style={{ position: "fixed", bottom: "var(--space-6)", right: "var(--space-6)", zIndex: 70 }}>
-          <Toast tone="danger" title="Não foi possível enviar" message="Informe um e-mail válido para retornarmos." onClose={() => setToast(false)} />
+          <Toast tone="danger" title="Não foi possível enviar" message={toast} onClose={() => setToast(null)} />
         </div>
       ) : null}
     </>

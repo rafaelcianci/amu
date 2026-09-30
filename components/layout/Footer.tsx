@@ -17,26 +17,26 @@ export interface FooterProps {
 }
 
 export function Footer({ variant = "compact" }: FooterProps) {
-  if (variant === "compact") {
-    return (
-      <footer style={{ background: "var(--surface-inverse-deep)", color: "var(--purple-300)", padding: "var(--space-7) 0" }}>
-        <div className="amu-section-rail amu-footer-compact-row" style={{ fontSize: "var(--fs-caption)" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--white)" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <LogoSvg aria-hidden style={{ height: 40, width: "auto", display: "block", color: "var(--white)" }} />
-            <h2 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "200", letterSpacing: "0.3px", color: "var(--white)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h2>
-          </div>
-          <span>
-            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
-              @agenciaamu
-            </a>{" "}
-            · 48 92003-3146 · Santa Catarina
-          </span>
-        </div>
-      </footer>
-    );
-  }
+  // if (variant === "compact") {
+  //   return (
+  //     <footer style={{ background: "var(--surface-inverse-deep)", color: "var(--purple-300)", padding: "var(--space-7) 0" }}>
+  //       <div className="amu-section-rail amu-footer-compact-row" style={{ fontSize: "var(--fs-caption)" }}>
+  //         {/* eslint-disable-next-line @next/next/no-img-element */}
+  //         <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--white)" }}>
+  //           {/* eslint-disable-next-line @next/next/no-img-element */}
+  //           <LogoSvg aria-hidden style={{ height: 40, width: "auto", display: "block", color: "var(--white)" }} />
+  //           <h2 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "200", letterSpacing: "0.3px", color: "var(--white)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h2>
+  //         </div>
+  //         <span>
+  //           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+  //             @agenciaamu
+  //           </a>{" "}
+  //           · 48 92003-3146 · Santa Catarina
+  //         </span>
+  //       </div>
+  //     </footer>
+  //   );
+  // }
 
   return (
     <footer style={{ background: "var(--surface-inverse-deep)", color: "var(--purple-300)", padding: "var(--space-8) 0 var(--space-6)" }}>

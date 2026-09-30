@@ -109,7 +109,7 @@ export default function SobrePage() {
       </section>
 
       <section className="amu-section-rail amu-section-y">
-        <TestimonialCard quote={TESTIMONIALS.sobre.quote} name={TESTIMONIALS.sobre.name} org={TESTIMONIALS.sobre.org} />
+        <TestimonialCard {...TESTIMONIALS.sobre} />
       </section>
 
       <ClosingCta
