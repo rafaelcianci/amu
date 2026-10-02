@@ -10,6 +10,9 @@
  * handoff README.
  */
 
+import type { StaticImageData } from "next/image";
+import socialMedia from "@/public/assets/images/social_media.webp";
+
 export interface SolutionMetric {
   label: string;
   value: string;
@@ -33,7 +36,8 @@ export interface SolutionFaq {
 }
 
 export interface Solution {
-  image?: string;
+  /** Static import, or a /public path for formats Turbopack can't import (AVIF). */
+  image?: string | StaticImageData;
   slug: string;
   index: string;
   name: string;
@@ -72,7 +76,7 @@ export const SOLUTIONS: Solution[] = [
     heroImagePlaceholder: "Mockup de feed ou foto de produção (4:5)",
     priceNote: "a partir de R$ 2.200/mês",
     ctaLabel: "Pedir proposta",
-    image: "/assets/images/social_media.webp",
+    image: socialMedia,
     metrics: [
       { label: "Alcance", value: "Rastreado", note: "Em tempo real, por post e por formato." },
       { label: "Salvamentos", value: "No painel", note: "A métrica que mostra conteúdo útil de verdade." },

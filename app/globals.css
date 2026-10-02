@@ -1,4 +1,3 @@
-@import "./styles/tokens/fonts.css";
 @import "./styles/tokens/colors.css";
 @import "./styles/tokens/typography.css";
 @import "./styles/tokens/spacing.css";
@@ -44,14 +43,34 @@ button {
   font-family: inherit;
 }
 
-/* [data-reveal] initial state is set inline by ScrollFX to avoid a flash of
-   hidden content before hydration on slow connections; this is the static
-   fallback for no-JS / pre-hydration paint. */
-[data-reveal] {
-  opacity: 1;
+/* The entrance runs in CSS so content on screen at first paint (including the
+   LCP element) never waits for hydration to become visible. ScrollFX only
+   re-hides elements that start below the fold and reveals them on scroll.
+   Delays mirror the data-reveal values in use; unlisted values get none. */
+@keyframes amu-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
 }
+[data-reveal] {
+  animation: amu-reveal 640ms cubic-bezier(.16, 1, .3, 1) both;
+}
+[data-reveal="60"] { animation-delay: 60ms; }
+[data-reveal="80"] { animation-delay: 80ms; }
+[data-reveal="100"] { animation-delay: 100ms; }
+[data-reveal="120"] { animation-delay: 120ms; }
+[data-reveal="160"] { animation-delay: 160ms; }
+[data-reveal="180"] { animation-delay: 180ms; }
+[data-reveal="200"] { animation-delay: 200ms; }
+[data-reveal="220"] { animation-delay: 220ms; }
+[data-reveal="240"] { animation-delay: 240ms; }
+[data-reveal="300"] { animation-delay: 300ms; }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    animation: none;
+  }
   [data-parallax], [data-parallax-bg] {
     transform: none !important;
   }

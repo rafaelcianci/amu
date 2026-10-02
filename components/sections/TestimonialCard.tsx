@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { ImageSlot } from "@/components/layout/ImageSlot";
 
 export interface TestimonialCardProps {
   quote: string;
   name: string;
   org: string;
-  image?: { src: string; alt: string };
+  image?: { src: string | StaticImageData; alt: string };
   url?: string;
 }
 

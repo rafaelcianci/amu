@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/layout/ImageSlot";
 import { Footer } from "@/components/layout/Footer";
@@ -12,6 +13,8 @@ import { SOLUTIONS } from "@/data/solutions";
 import { METHOD_PHASES } from "@/data/method";
 import { TESTIMONIALS, MANIFESTO_PILLARS, HOME_FAQ, DIFERENCIAIS } from "@/data/content";
 import { CTA_HREF } from "@/lib/nav";
+
+import estudio from "@/public/assets/images/estudio.jpg";
 
 export const metadata: Metadata = {
   title: "Agência AMU — Marca, conteúdo e mídia paga como um sistema só",
@@ -71,7 +74,14 @@ export default function HomePage() {
             />
           </div>
           <div data-parallax="0.12" style={{ position: "relative", aspectRatio: "4 / 5" }}>
-            <img style={{ inset: 0, borderRadius: "32px", objectFit: "cover" }} src="/assets/images/estudio.jpg" alt="Foto principal — equipe, estúdio ou dashboard (4:5)" />
+            <Image
+              src={estudio}
+              alt="Foto principal — equipe, estúdio ou dashboard (4:5)"
+              sizes="(max-width: 900px) 100vw, 560px"
+              loading="eager"
+              fetchPriority="high"
+              style={{ width: "100%", height: "auto", borderRadius: "32px" }}
+            />
           </div>
         </div>
       </section>
@@ -140,7 +150,7 @@ export default function HomePage() {
               }}
             >
               <div style={{ position: "relative", aspectRatio: "14 / 10" }}>
-                <ImageSlot shape="rect" style={{ backgroundImage: `url(${s.image})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+                <ImageSlot shape="rect" src={s.image} sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" />
               </div>
               <div style={{ padding: "var(--space-5) var(--space-6) 0" }}>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-overline)", color: "var(--purple-400)" }}>{s.index}</div>

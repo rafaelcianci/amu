@@ -1,6 +1,9 @@
 /** Testimonials, home/sobre FAQ sets, and the manifesto pillars — all
  *  content flagged in the handoff README as placeholder voice, not fact. */
 
+import expertContabilidade from "@/public/assets/clientes/expert-contabilidade.jpg";
+import auralis from "@/public/assets/clientes/auralis.png";
+
 export const TESTIMONIALS = {
   home: {
     quote:
@@ -8,7 +11,7 @@ export const TESTIMONIALS = {
     name: "Paulo",
     org: "Expert Contabilidade",
     image: {
-      src: "/assets/clientes/expert-contabilidade.jpg",
+      src: expertContabilidade,
       alt: "Sala de reunião da Expert Assessoria Contábil, com o logo na parede",
     },
     url: "https://www.expertcontabil.com.br/",
@@ -18,7 +21,7 @@ export const TESTIMONIALS = {
       "A AMU criou a identidade da Auralis, fez o nosso site e cuida do conteúdo das redes sociais. Chegamos ao mercado com cara de empresa estabelecida, e a marca fala a mesma língua em todo lugar.",
     name: "Pedro",
     org: "Auralis BPO Financeiro",
-    image: { src: "/assets/clientes/auralis.png", alt: "Logo da Auralis" },
+    image: { src: auralis, alt: "Logo da Auralis" },
     url: "https://www.auralisbpo.com/",
   },
 };

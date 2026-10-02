@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    inlineCss: true,
+  },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    // Optimized copies of /public paths can't be invalidated; statically imported images are cached as immutable regardless.
+    minimumCacheTTL: 2678400,
+  },
   turbopack: {
     rules: {
       "*.svg": {

@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image, { type StaticImageData } from "next/image";
 
 export interface ImageSlotProps {
   /** Shape of the placeholder frame. "rect" = no rounding, "rounded" = `radius`px, "circle" = 50%. */
@@ -8,9 +9,15 @@ export interface ImageSlotProps {
   /** States what the photo is and its aspect ratio — shown as the placeholder label. */
   placeholder?: string;
   /** Image to show in the slot. When set, it fills the frame (object-fit: cover) and the placeholder label is hidden. */
-  src?: string;
+  src?: string | StaticImageData;
   /** Alt text for `src`. Use "" when the image is decorative (e.g. a card cover next to its own title). */
   alt?: string;
+  /** Rendered width of the slot, as an `<img sizes>` value. */
+  sizes?: string;
+  /** CSS object-position for `src`. */
+  position?: string;
+  /** Set on the page's main (LCP) image: loads it eagerly with high fetch priority. */
+  eager?: boolean;
   style?: CSSProperties;
 }
 
@@ -21,7 +28,7 @@ export interface ImageSlotProps {
  * Meant to be dropped inside a parent with `position: relative` and a set
  * size (commonly `aspect-ratio`), which it fills via `position: absolute; inset: 0`.
  */
-export function ImageSlot({ shape = "rect", radius = 0, placeholder, src, alt = "", style }: ImageSlotProps) {
+export function ImageSlot({ shape = "rect", radius = 0, placeholder, src, alt = "", sizes = "100vw", position, eager, style }: ImageSlotProps) {
   const borderRadius = shape === "circle" ? "50%" : shape === "rounded" ? `${radius}px` : 0;
   return (
     <div
@@ -40,8 +47,15 @@ export function ImageSlot({ shape = "rect", radius = 0, placeholder, src, alt = 
       }}
     >
       {src ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={sizes}
+          loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : undefined}
+          style={{ objectFit: "cover", objectPosition: position }}
+        />
       ) : (
       <span
         style={{

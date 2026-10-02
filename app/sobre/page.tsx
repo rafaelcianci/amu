@@ -7,6 +7,7 @@ import { ClosingCta } from "@/components/sections/ClosingCta";
 import { StatRow } from "@/components/sections/StatRow";
 import { TestimonialCard } from "@/components/sections/TestimonialCard";
 import { PRINCIPIOS, TEAM, TESTIMONIALS } from "@/data/content";
+import sobre from "@/public/assets/images/sobre.jpg";
 
 export const metadata: Metadata = {
   title: "Sobre",
@@ -48,7 +49,13 @@ export default function SobrePage() {
           />
         </div>
         <div data-parallax="0.12" style={{ position: "relative", aspectRatio: "4 / 5" }}>
-          <img src="/assets/images/sobre.jpg" alt="Sobre a AMU - Foto do estúdio" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "var(--radius-lg)" }} />
+          <ImageSlot
+            src={sobre}
+            alt="Sobre a AMU - Foto do estúdio"
+            sizes="(max-width: 900px) 100vw, 560px"
+            eager
+            style={{ borderRadius: "var(--radius-lg)" }}
+          />
         </div>
       </section>
 

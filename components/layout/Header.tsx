@@ -44,7 +44,7 @@ export function Header() {
       >
         <Link href="/" aria-label="Agência AMU — início" style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--purple-700)" }}>
           <LogoSvg aria-hidden style={{ height: 50, width: "auto", display: "block" }} />
-          <h1 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "200", letterSpacing: "0.3px", color: "var(--purple-700)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h1>
+          <h1 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "400", letterSpacing: "0.3px", color: "var(--purple-700)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h1>
         </Link>
 
         <nav

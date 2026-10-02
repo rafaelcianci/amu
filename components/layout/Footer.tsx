@@ -49,7 +49,7 @@ export function Footer({ variant = "compact" }: FooterProps) {
             <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--white)" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <LogoSvg aria-hidden style={{ height: 40, width: "auto", display: "block", color: "var(--white)" }} />
-              <h2 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "200", letterSpacing: "0.3px", color: "var(--white)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h2>
+              <h2 style={{ fontFamily: "var(--font-Comfortaa)", fontSize: "26px", fontWeight: "400", letterSpacing: "0.3px", color: "var(--white)" }}>Agência<strong style={{ fontWeight: "700" }}>AMU</strong></h2>
             </div>
             <p style={{ fontSize: "var(--fs-body-sm)", lineHeight: "var(--lh-relaxed)", margin: "var(--space-4) 0 0", maxWidth: 340 }}>
               Marketing digital para marcas que querem crescer com estratégia, estética e resultado.

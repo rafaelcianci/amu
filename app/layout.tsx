@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { Comfortaa, Manrope } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { RouteScrollFX } from "@/components/motion/RouteScrollFX";
 import { SITE_URL } from "@/lib/site";
+
+const comfortaa = Comfortaa({ subsets: ["latin"], variable: "--font-comfortaa" });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${comfortaa.variable} ${manrope.variable}`}>
       <GoogleTagManager gtmId="GTM-PSMVWGX9" />
       <body>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSMVWGX9" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
@@ -25,7 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <RouteScrollFX />
       </body>
-      <GoogleAnalytics gaId="G-NYY0ZMZKV6" />
     </html>
   );
 }

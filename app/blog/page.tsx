@@ -71,7 +71,7 @@ export default function BlogPage() {
           }}
         >
           <div style={{ position: "relative", aspectRatio: "16 / 11" }}>
-            <ImageSlot shape="rounded" radius={20} placeholder="Imagem do artigo em destaque (16:11)" src={postCoverFeatured(FEATURED_POST.slug)} />
+            <ImageSlot shape="rounded" radius={20} placeholder="Imagem do artigo em destaque (16:11)" src={postCoverFeatured(FEATURED_POST.slug)} sizes="(max-width: 900px) 100vw, 600px" eager />
           </div>
           <div style={{ padding: "var(--space-6) var(--space-6) var(--space-6) 0" }}>
             <div style={{ display: "flex", gap: "var(--space-3)", alignItems: "center", flexWrap: "wrap" }}>
@@ -111,7 +111,7 @@ export default function BlogPage() {
           {BLOG_POSTS.map((post, i) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} data-reveal={(i % 3) * 100} style={{ color: "inherit", display: "block" }}>
               <div style={{ position: "relative", aspectRatio: "4 / 3" }}>
-                <ImageSlot shape="rounded" radius={20} placeholder="Capa do artigo (4:3)" src={postCover(post.slug)} />
+                <ImageSlot shape="rounded" radius={20} placeholder="Capa do artigo (4:3)" src={postCover(post.slug)} sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 400px" />
               </div>
               <div style={{ display: "flex", gap: 10, alignItems: "center", marginTop: "var(--space-4)", fontSize: "var(--fs-caption)", color: "var(--text-muted)" }}>
                 <span
